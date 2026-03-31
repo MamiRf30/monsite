@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz généré</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <section class="panel hero">
+            <h1>Quiz: {{ meta.theme }}</h1>
+            <p>Difficulté: {{ meta.difficulty }} · {{ questions|length }} questions</p>
+        </section>
+
+        <form method="post" action="{{ url_for('submit') }}" class="stack">
+            {% for q in questions %}
+                <section class="panel question-card">
+                    <h2>Question {{ q.id }}</h2>
+                    <p class="question-text">{{ q.question }}</p>
+
+                    {% for key, value in q.options.items() %}
+                        <label class="option">
+                            <input type="radio" name="question_{{ q.id }}" value="{{ key }}" required>
+                            <span><strong>{{ key }}.</strong> {{ value }}</span>
+                        </label>
+                    {% endfor %}
+                </section>
+            {% endfor %}
+
+            <button type="submit">Valider</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,127 @@
+:root {
+    --bg: #0b1020;
+    --panel: #141c33;
+    --primary: #4f8cff;
+    --text: #f2f5ff;
+    --muted: #a7b3d0;
+    --ok: #1f9d67;
+    --ko: #d34b4b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: radial-gradient(circle at top right, #1e2e56, var(--bg));
+    min-height: 100vh;
+}
+
+.container {
+    width: min(920px, 92vw);
+    margin: 2rem auto;
+}
+
+.panel {
+    background: rgba(20, 28, 51, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hero {
+    border-left: 4px solid var(--primary);
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+p {
+    color: var(--muted);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+}
+
+input, select, button {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #0f1730;
+    color: var(--text);
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    background: linear-gradient(135deg, #4f8cff, #2e63cf);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    filter: brightness(1.08);
+}
+
+.option {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 0.6rem;
+}
+
+.option input {
+    width: auto;
+    margin: 0;
+}
+
+.score {
+    font-size: 1.4rem;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.ok {
+    border-left: 4px solid var(--ok);
+}
+
+.ko {
+    border-left: 4px solid var(--ko);
+}
+
+.alert {
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.alert-error {
+    background: rgba(211, 75, 75, 0.15);
+    border: 1px solid rgba(211, 75, 75, 0.5);
+}
+
+.btn-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: #2e63cf;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+}
+
+.stack {
+    display: block;
+}
